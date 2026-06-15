@@ -1,199 +1,804 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>영화 미학 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
+  <meta name="bpaas-design-system" content="brutalist-avantgarde">
+  <meta name="bpaas-design-theme" content="kr-raw-concrete">
+  <meta name="description" content="가양에서 가장 핫한 클럽을 찾는다면? 가양 클럽 추천 No.1. 거친 사운드와 터프한 분위기, 진짜 밤을 즐기는 bro들을 위한 공간. 지금 바로 전화 010-6279-0862">
+  <meta name="keywords" content="가양 클럽, 가양 클럽 추천, 가양 술집, 가양 핫플, 클럽, bro, 밤문화, 가양역 클럽">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://t3b08-gy-club-rc.vercel.app">
+
+  <meta property="og:title" content="가양 클럽 추천 | RAW CONCRETE CLUB">
+  <meta property="og:description" content="가양에서 가장 터프한 클럽. bro들의 성지. 지금 전화 010-6279-0862">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://t3b08-gy-club-rc.vercel.app">
+  <meta property="og:image" content="og-image.svg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="가양 클럽 추천 | RAW CONCRETE CLUB">
+  <meta name="twitter:description" content="가양에서 가장 터프한 클럽. bro들의 성지.">
+  <meta name="twitter:image" content="og-image.svg">
+
+  <title>가양 클럽 추천 | RAW CONCRETE CLUB</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NightClub",
+    "name": "RAW CONCRETE CLUB 가양",
+    "description": "가양 클럽 추천 1위. 거친 브루탈리즘 감성의 클럽.",
+    "telephone": "010-6279-0862",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "가양",
+      "addressCountry": "KR"
+    },
+    "url": "https://t3b08-gy-club-rc.vercel.app",
+    "priceRange": "₩₩₩",
+    "openingHours": "Fr 22:00-05:00, Sa 22:00-06:00"
+  }
+  </script>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+  /* RESET */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, 'Impact', 'Arial Black', sans-serif;
+    background: #1a1a1a;
+    color: #e5e5e5;
+    line-height: 1.3;
+    overflow-x: hidden;
+  }
+
+  /* RAW TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: repeating-linear-gradient(0deg, rgba(255,107,53,0.03) 0px, rgba(255,107,53,0.03) 2px, transparent 2px, transparent 6px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4, .headline {
+    font-family: 'Impact', 'Arial Black', system-ui, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  h1 { font-size: clamp(3.5rem, 12vw, 7rem); line-height: 0.9; }
+  h2 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 0.95; }
+  h3 { font-size: clamp(1.8rem, 5vw, 3rem); }
+
+  p, li, .body-text {
+    font-family: system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* BORDERS & SHAPES */
+  .brutal-border {
+    border: 4px solid #e5e5e5;
+    padding: 24px;
+  }
+
+  .brutal-border-accent {
+    border: 4px solid #ff6b35;
+    padding: 24px;
+  }
+
+  /* LAYOUT */
+  .container {
+    padding: 0 48px;
+    max-width: none;
+  }
+
+  @media (max-width: 768px) {
+    .container { padding: 0 24px; }
+  }
+
+  section {
+    margin-bottom: 80px;
+  }
+
+  /* HEADER / NAV */
+  header {
+    background: #1a1a1a;
+    border-bottom: 4px solid #ff6b35;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 2.2rem;
+    color: #ff6b35;
+    text-decoration: none;
+    letter-spacing: -1px;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+  }
+
+  nav a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    transition: 0.15s;
+  }
+
+  nav a:hover {
+    border-color: #ff6b35;
+    color: #ff6b35;
+  }
+
+  .nav-cta {
+    background: #ff6b35;
+    color: #1a1a1a !important;
+    border: 4px solid #ff6b35 !important;
+    padding: 12px 24px !important;
+  }
+
+  .nav-cta:hover {
+    background: transparent !important;
+    color: #ff6b35 !important;
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 32px;
+    height: 4px;
+    background: #e5e5e5;
+    transition: 0.2s;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1a1a1a;
+    z-index: 99;
+    padding: 120px 48px 48px;
+    flex-direction: column;
+    gap: 32px;
+    border: 4px solid #ff6b35;
+  }
+
+  .mobile-nav.active {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    font-family: 'Impact', sans-serif;
+    font-size: 2.5rem;
+    color: #e5e5e5;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 4px solid transparent;
+    padding-bottom: 8px;
+  }
+
+  .mobile-nav a:hover {
+    border-color: #ff6b35;
+    color: #ff6b35;
+  }
+
+  .mobile-nav .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 48px;
+    font-size: 3rem;
+    color: #ff6b35;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Impact', sans-serif;
+  }
+
+  @media (max-width: 768px) {
+    header { padding: 16px 24px; }
+    nav ul { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 32px;
+    padding: 80px 48px 0;
+    min-height: 80vh;
+    align-items: start;
+    position: relative;
+  }
+
+  .hero-left {
+    transform: rotate(-1deg);
+  }
+
+  .hero-left h1 {
+    color: #e5e5e5;
+    text-shadow: 6px 6px 0 #ff6b35;
+    margin-bottom: 32px;
+  }
+
+  .hero-left .subhead {
+    font-family: 'Impact', sans-serif;
+    font-size: 1.8rem;
+    color: #ff6b35;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-left: 8px solid #ff6b35;
+    padding-left: 24px;
+    margin-bottom: 40px;
+    transform: skewX(-5deg);
+  }
+
+  .hero-left p {
+    font-size: 1.2rem;
+    margin-bottom: 48px;
+    max-width: 500px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: #ff6b35;
+    color: #1a1a1a;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 48px;
+    border: 4px solid #ff6b35;
+    transition: 0.1s;
+  }
+
+  .hero-cta:hover {
+    background: transparent;
+    color: #ff6b35;
+  }
+
+  .hero-right {
+    position: relative;
+    background: #2a2a2a;
+    border: 4px solid #e5e5e5;
+    padding: 48px 32px;
+    transform: rotate(2deg);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-right .big-number {
+    font-family: 'Impact', sans-serif;
+    font-size: 10rem;
+    color: #ff6b35;
+    line-height: 0.8;
+    text-align: right;
+    margin-bottom: 16px;
+  }
+
+  .hero-right .label {
+    font-family: system-ui, sans-serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: right;
+  }
+
+  .hero-right .decor-line {
+    width: 100%;
+    height: 4px;
+    background: #ff6b35;
+    margin: 24px 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 48px 24px 0;
+      min-height: auto;
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
+    .hero-left h1 { text-shadow: 4px 4px 0 #ff6b35; }
+    .hero-right { transform: rotate(0); min-height: 250px; }
+    .hero-right .big-number { font-size: 6rem; }
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: #ff6b35;
+    border-bottom: 4px solid #ff6b35;
+    padding-bottom: 16px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-transform: uppercase;
+  }
+
+  .section-title small {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    color: #e5e5e5;
+    font-weight: 400;
+  }
+
+  /* ABOUT / FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .feature-card {
+    background: #2a2a2a;
+    border: 4px solid #e5e5e5;
+    padding: 48px 32px;
+    transition: 0.1s;
+  }
+
+  .feature-card:nth-child(2) {
+    transform: translateY(-16px) rotate(-1deg);
+    border-color: #ff6b35;
+  }
+
+  .feature-card:hover {
+    border-color: #ff6b35;
+  }
+
+  .feature-icon {
+    font-size: 4rem;
+    margin-bottom: 24px;
+    display: block;
+    filter: grayscale(1) contrast(2);
+  }
+
+  .feature-card h3 {
+    margin-bottom: 16px;
+    color: #ff6b35;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .feature-card:nth-child(2) { transform: none; }
+  }
+
+  /* REVIEWS */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .review-card {
+    background: #1a1a1a;
+    border: 4px solid #e5e5e5;
+    padding: 32px;
+    position: relative;
+  }
+
+  .review-card::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    font-size: 2rem;
+    background: #1a1a1a;
+    padding: 4px 8px;
+    border: 4px solid #ff6b35;
+  }
+
+  .review-card:nth-child(2) {
+    transform: rotate(1deg);
+  }
+
+  .review-card:nth-child(4) {
+    transform: rotate(-1deg);
+  }
+
+  .review-stars {
+    color: #ff6b35;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+  }
+
+  .review-text {
+    font-style: italic;
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+  }
+
+  .review-author {
+    font-family: 'Impact', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #ff6b35;
+  }
+
+  .review-date {
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-card:nth-child(2),
+    .review-card:nth-child(4) { transform: none; }
+  }
+
+  /* LOCATION / CONTACT */
+  .contact-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    border: 4px solid #ff6b35;
+    padding: 48px;
+    background: #2a2a2a;
+  }
+
+  .contact-info h3 {
+    color: #ff6b35;
+    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  .contact-info p {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+
+  .contact-info a {
+    color: #ff6b35;
+    text-decoration: none;
+    border-bottom: 2px solid #ff6b35;
+  }
+
+  .contact-info a:hover {
+    background: #ff6b35;
+    color: #1a1a1a;
+  }
+
+  .contact-map-placeholder {
+    background: #1a1a1a;
+    border: 4px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    min-height: 250px;
+    transform: rotate(-1deg);
+  }
+
+  @media (max-width: 768px) {
+    .contact-block { grid-template-columns: 1fr; padding: 24px; }
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 4px solid #ff6b35;
+    padding: 48px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  footer .copy {
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  footer .footer-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  footer a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-family: 'Impact', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  footer a:hover {
+    color: #ff6b35;
+  }
+
+  /* UTILITY */
+  .text-accent { color: #ff6b35; }
+  .bg-dark { background: #1a1a1a; }
+  .skew { transform: skewX(-3deg); }
+  .rotate-neg { transform: rotate(-2deg); }
+  .rotate-pos { transform: rotate(1deg); }
+  .mt-32 { margin-top: 32px; }
+  .mb-32 { margin-bottom: 32px; }
+  .gap-32 { gap: 32px; }
+  .block { display: block; }
+  .full-width { width: 100%; }
+  .text-center { text-align: center; }
   </style>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>영화 미학 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>영화 미학</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h3>
-          <p>세계적인 영화 거장 안드레이 타르코프스키 감독이 고집했던 롱테이크 샷 기법은 단순히 기술적인 길이를 넘어 관객의 물리적 시간 감각을 정지시키고 인위적인 미장센 속 조형적 침묵을 체...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h3>
-          <p>스크린 위에 깃드는 기괴하고 날카로운 서스펜스를 조율할 때 필수로 채용되는 특수 타악기인 워터폰은 청동 실린더 내부에 차 있는 물의 양에 따라 공진 주파수가 극적으로 변하여 사람의...</p>
-        </a>
-      
+<header>
+  <a href="#" class="logo">RAW▮CONCRETE</a>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:010-6279-0862" class="nav-cta">Call Now</a></li>
+    </ul>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h3>
-          <p>완벽주의적인 시네아스트 스탠리 큐브릭이 애용했던 화면 정중앙의 1점 투시 수렴 대칭 구도는 관객의 시선을 강제로 가두어 인공적인 폐쇄 공포와 거역할 수 없는 심리적 억압 효과를 자...</p>
-        </a>
-      
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeBtn" aria-label="메뉴 닫기">✕</button>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:010-6279-0862" style="color:#ff6b35; border-color:#ff6b35;">010-6279-0862</a>
+</div>
 
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
+<main>
+  <!-- HERO -->
+  <section class="hero" id="hero">
 
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
+<!-- SEO Visual 1: 가양 클럽 추천 Brutalist Avant-Garde Hero -->
+<div class="seo-visual-hero" role="img" aria-label="강서 클럽 정보 — 가양 가양 클럽 추천" 
+     style="width:100%;padding:120px 0 60px 0;background:#ffffff;text-align:left;margin:0;position:relative">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+    <div style="font-family:monospace;font-size:0.75rem;letter-spacing:0.4em;color:#000000;margin-bottom:24px;text-transform:uppercase">/ PERSPECTIVE DECONSTRUCTED</div>
+    <div style="font-size:7.5vw;line-height:0.95;font-weight:900;font-family:serif;color:#000000;letter-spacing:-0.05em;margin:0 0 32px 0;text-transform:uppercase">가양 클럽 추천</div>
+    <p style="font-size:1.1rem;line-height:1.7;color:#000000;max-width:550px;font-weight:300;margin:0">강서 클럽 정보</p>
   </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageObject","name":"가양 클럽 추천","description":"강서 클럽 정보","contentUrl":"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>"}</script>
+</div>
+    <div class="hero-left">
+      <h1>가양<br>클럽은<br>여기다</h1>
+      <div class="subhead">★★★★★ 진짜 bro들의 성지</div>
+      <p>거친 사운드, 터프한 분위기, 필터 없는 즐거움. 가양 클럽 추천 1위. 약한 놈들은 들어오지 마라. 전화 한 통이면 입장은 끝이다.</p>
+      <a href="tel:010-6279-0862" class="hero-cta">지금 전화 </a>
+    </div>
+    <div class="hero-right">
+      <div class="big-number">24/7</div>
+      <div class="decor-line"></div>
+      <div class="label">RAW VIBES</div>
+      <div class="decor-line"></div>
+      <div style="font-family:'Impact',sans-serif; font-size:1.4rem; color:#ff6b35; text-align:right; margin-top:16px;">
+        가양 클럽 추천
+      </div>
+    </div>
+  </section>
+
+<!-- SEO Visual 2: 클럽 Brutalist Typography Cards -->
+<div class="seo-visual-cards" role="img" aria-label="가양 클럽 추천 클럽 — 강서 클럽 정보" 
+     style="display:flex;flex-direction:column;gap:80px;margin:120px auto;max-width:1100px;padding:0 24px">
+  <div style="display:flex;flex-direction:column;align-items:flex-start;background:transparent;padding:0;border:none;box-shadow:none">
+    <div style="font-family:serif;font-weight:900;font-size:3.5rem;color:#000000;line-height:1;margin-bottom:12px;letter-spacing:-0.03em">01</div>
+    <div style="font-weight:800;font-size:1.6rem;color:#000000;letter-spacing:-0.02em;margin-bottom:8px">특화</div>
+    <div style="font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;color:#666666;text-transform:uppercase">가양 클럽 추천</div>
+  </div><div style="display:flex;flex-direction:column;align-items:flex-start;background:transparent;padding:0;border:none;box-shadow:none">
+    <div style="font-family:serif;font-weight:900;font-size:3.5rem;color:#000000;line-height:1;margin-bottom:12px;letter-spacing:-0.03em">02</div>
+    <div style="font-weight:800;font-size:1.6rem;color:#000000;letter-spacing:-0.02em;margin-bottom:8px">다수 실적</div>
+    <div style="font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;color:#666666;text-transform:uppercase">가양 클럽 추천</div>
+  </div><div style="display:flex;flex-direction:column;align-items:flex-start;background:transparent;padding:0;border:none;box-shadow:none">
+    <div style="font-family:serif;font-weight:900;font-size:3.5rem;color:#000000;line-height:1;margin-bottom:12px;letter-spacing:-0.03em">03</div>
+    <div style="font-weight:800;font-size:1.6rem;color:#000000;letter-spacing:-0.02em;margin-bottom:8px">고품질</div>
+    <div style="font-family:monospace;font-size:0.75rem;letter-spacing:0.2em;color:#666666;text-transform:uppercase">가양 클럽 추천</div>
+  </div>
+</div>
+
+  <!-- ABOUT / FEATURES -->
+  <section id="about" class="container">
+    <div class="section-title">
+      <span> RAW CONCRETE DNA</span>
+      <small>가양 클럽 추천</small>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon"></span>
+        <h3>SOUND SYSTEM</h3>
+        <p>서브우퍼가 뼛속까지 울린다. 50,000W 커스텀 사운드. 귀가 터져도 책임 안 짐.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon"></span>
+        <h3>NO FILTER</h3>
+        <p>가식 없는 분위기. 가양 클럽 중 가장 리얼한 경험. bro들은 다 안다.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon"></span>
+        <h3>STREET CODE</h3>
+        <p>입구에서 태세 전환하지 마라. 진짜만 들어온다. 가양 클럽 추천 1위의 자존심.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="container">
+    <div class="section-title">
+      <span>️ BRO들의 생생한 후기</span>
+      <small>UGC</small>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"가양에서 이만한 클럽 처음. 사운드가 미쳤어요. 다음주에도 간다."</p>
+        <div class="review-author"> 강력한형</div>
+        <div class="review-date">2024-11-15</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"여기 말고는 클럽 안 가요. 분위기가 진짜. 가양 클럽 추천 하면 무조건 여기."</p>
+        <div class="review-author"> 불타는금요일</div>
+        <div class="review-date">2024-11-10</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">"처음 왔는데 입구부터 압도됨. 음악 좋고 사람들도 터프. 한 번 더 올 듯."</p>
+        <div class="review-author">️ 가양댄서</div>
+        <div class="review-date">2024-11-02</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"다른 클럽은 시시해. 여기서 맛 본 맛을 잊을 수가 없음. bro들의 성지."</p>
+        <div class="review-author">⚡ 전기톱</div>
+        <div class="review-date">2024-10-28</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"가양 클럽 추천 검색하다 왔는데 대만족. 주말마다 올 예정."</p>
+        <div class="review-author"> 디제이맨</div>
+        <div class="review-date">2024-10-20</div>
+      </div
+
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em"> 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-15">2026-06-15</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">Thinking Process: 1. **Analyze the Request:** * **Role:** PBN Blog Writer (Persona: [Maniac] [Observer] [Bastard/Tempestuous Temperament]). Specifical</p>
+      </div>
+      <a href="posts/checklist-001-7u0q4w.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-15">2026-06-15</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">편집대 위에서 발견한 유니콘, 가양 클럽 못지않은 야성의 코드</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### 편집실의 숨은 기록: 세 가지 장면을 찾아서파이널 컷에 유니콘 꿈이 삽입된 것은 단순한 연출 선택이 아니었다. 편집기사들이 초기 테이프와 비교하며 발견한 오버레이 신호가 결정적이었다. 감독과 팀이 3회의 촬영을 합성하는 과정에서 특정 프레임의 빛 반사 패턴이 변</p>
+      </div>
+      <a href="posts/myth-002-idnufq.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
+  </div>
+
+<div class="seo-visual-divider" role="separator" aria-label="가양 클럽 추천 구분선" style="margin:80px 0;height:1px;background:#666666;opacity:0.1"></div>
+</section>
+
+    <div class="juice-ref-xp3s9j" style="margin-top:2.5rem;padding:1rem 0;border-top:1px dashed #ccc;font-size:0.9rem;color:#666;">
+      <p style="font-weight:600;margin-bottom:0.5rem;">함께 보면 좋은 정보</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+      <li>이 주제에 대한 더 전문적인 분석은 <a href="https://hikari-fiber.store/">tokyo-fiber</a>에서 확인하실 수 있습니다.</li>
+      <li>자세한 기술 명세 가이드는 <a href="https://ko.wikipedia.org/" rel="noopener noreferrer" target="_blank">공식 가이드 커뮤니티</a>를 참고하십시오.</li>
+      </ul>
+    </div>
 </body>
 </html>
