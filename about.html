@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="bpaas-design-system" content="brutalist-avantgarde">
+  <meta name="bpaas-design-theme" content="kr-raw-concrete">
+  <meta name="description" content="가양에서 가장 핫한 클럽을 찾는다면? 가양 클럽 추천 No.1. 거친 사운드와 터프한 분위기, 진짜 밤을 즐기는 bro들을 위한 공간. 지금 바로 전화 010-6279-0862">
+  <meta name="keywords" content="가양 클럽, 가양 클럽 추천, 가양 술집, 가양 핫플, 클럽, bro, 밤문화, 가양역 클럽">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://t3b08-gy-club-rc.vercel.app">
+  <meta property="og:title" content="가양 클럽 추천 | RAW CONCRETE CLUB">
+  <meta property="og:description" content="가양에서 가장 터프한 클럽. bro들의 성지. 지금 전화 010-6279-0862">
+  <meta property="og:url" content="https://t3b08-gy-club-rc.vercel.app">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="RAW CONCRETE CLUB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="가양 클럽 추천 | RAW CONCRETE CLUB">
+  <meta name="twitter:description" content="가양에서 가장 터프한 클럽. bro들의 성지. 지금 전화 010-6279-0862">
+  <title>정보 | 가양 클럽 추천 RAW CONCRETE</title>
+  <style>
+    /* RESET */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    body {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
+      padding: 0 1rem;
+      position: relative;
+      min-height: 100vh;
+    }
+    /* RAW TEXTURE */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><path d="M0 0h4v4H0z" fill="%23222"/><path d="M0 0h1v1H0zm2 2h1v1H2z" fill="%23333"/></svg>');
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: -1;
+    }
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, .headline {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #f0f0f0;
+    }
+    h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      border-left: 8px solid #ff4d4d;
+      padding-left: 1rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2rem 0 1.2rem;
+      border-bottom: 3px solid #ff4d4d;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 1.5rem 0 0.8rem;
+    }
+    p, li, .body-text {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #cacaca;
+    }
+    a {
+      color: #ff6666;
+      text-decoration: underline wavy #ff4d4d 2px;
+      text-underline-offset: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    a:hover {
+      color: #ffffff;
+      background: #b3002d;
+      text-decoration: none;
+    }
+    strong, b {
+      color: #ff9999;
+      font-weight: 800;
+    }
+    /* BORDERS & SHAPES */
+    .brutal-border {
+      border: 4px solid #3d3d3d;
+      padding: 1.5rem;
+      background: rgba(20, 20, 20, 0.8);
+      box-shadow: 8px 8px 0 #0a0a0a;
+      margin-bottom: 2rem;
+    }
+    .brutal-border-accent {
+      border: 4px solid #ff4d4d;
+      padding: 1.5rem;
+      background: #1a0f0f;
+      box-shadow: 10px 10px 0 #660000;
+      margin-bottom: 2rem;
+    }
+    /* LAYOUT */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 4px solid #ff4d4d;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .nav-logo a {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #f0f0f0;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      background: #2a2a2a;
+      padding: 0.3rem 0.8rem;
+      border: 3px solid #ff4d4d;
+      box-shadow: 4px 4px 0 #990000;
+    }
+    .nav-logo a:hover {
+      background: #ff4d4d;
+      color: #000;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+      border: 2px solid #555;
+      background: #1f1f1f;
+      color: #ddd;
+      text-decoration: none;
+      transition: 0.15s;
+    }
+    .nav-links a:hover {
+      background: #ff4d4d;
+      border-color: #ff4d4d;
+      color: #000;
+      box-shadow: 4px 4px 0 #7a0000;
+    }
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      background: #2a2a2a;
+      padding: 8px 12px;
+      border: 2px solid #ff4d4d;
+    }
+    .hamburger-menu span {
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+    .tel-link {
+      display: inline-block;
+      background: #b3002d;
+      color: #fff !important;
+      padding: 0.5rem 1.2rem;
+      font-weight: 900;
+      border: 3px solid #ff4d4d;
+      text-decoration: none;
+      font-size: 1.4rem;
+      letter-spacing: 0.1rem;
+      box-shadow: 5px 5px 0 #4d0000;
+    }
+    .tel-link:hover {
+      background: #ff4d4d;
+      color: #000 !important;
+      box-shadow: 2px 2px 0 #4d0000;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .info-card {
+      background: #1e1e1e;
+      border: 3px solid #3d3d3d;
+      padding: 1.8rem;
+      box-shadow: 6px 6px 0 #0f0f0f;
+    }
+    .info-card h3 {
+      margin-top: 0;
+      border-left: 6px solid #ff4d4d;
+      padding-left: 0.6rem;
+    }
+    .info-card ul {
+      list-style: square;
+      padding-left: 1.5rem;
+    }
+    .info-card li {
+      margin-bottom: 0.6rem;
+    }
+    .faq-item {
+      border-bottom: 2px dashed #444;
+      padding: 1rem 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      border-top: 4px solid #ff4d4d;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    /* responsive-768 */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.7rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+      nav { flex-direction: column; align-items: stretch; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 0.6rem;
+      }
+      .nav-links a {
+        text-align: center;
+        padding: 0.8rem;
+      }
+      .hamburger-menu {
+        display: flex;
+        align-self: flex-end;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .tel-link {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0.8rem 1rem;
+      }
+      .brutal-border, .brutal-border-accent {
+        padding: 1rem;
+        box-shadow: 4px 4px 0 #0a0a0a;
+      }
+    }
+    @media (max-width: 768px) {
+      .hamburger-menu {
+        display: flex;
+      }
+    }
+    @media (min-width: 769px) {
+      .nav-links {
+        display: flex !important;
+      }
+      .hamburger-menu {
+        display: none;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <div class="container">
+    <!-- nav-present -->
+    <nav>
+      <div class="nav-logo">
+        <a href="/">RAW CONCRETE</a>
+      </div>
+      <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="/">홈</a>
+        <a href="/info">정보</a>
+        <a href="/gallery">갤러리</a>
+        <a href="/location">오시는 길</a>
+        <a href="tel:010-6279-0862" class="tel-link">CALL 010-6279-0862</a>
+      </div>
+    </nav>
+
+    <!-- 페이지 제목 정보 -->
+    <h1>정보 · RAW CONCRETE</h1>
+    <p class="headline" style="font-size:1.4rem; margin-bottom:2rem; color:#ffb3b3;">⬩ 가양 클럽 추천 No.1 ⬩ 거친 사운드 & 터프한 bro들의 전장</p>
+
+    <!-- 상세 정보 + 지역 시그널 -->
+    <div class="grid-2">
+      <div class="info-card brutal-border">
+        <h3>📍 지역 시그널 · 가양</h3>
+        <ul>
+          <li><strong>가양역</strong> 도보 4분 · 골목 끝자락 콘크리트 벙커</li>
+          <li>서울 강서구 <strong>가양동</strong> 쓰레기 같은 동네? 근데 여긴 다름</li>
+          <li>지하철 9호선 가양역 3번출구 직진 후 <strong>RAW CONCRETE</strong> 간판</li>
+          <li>주차? 포기해. 대신 역세권 / 대리비 5000원 지원 (bro 혜택)</li>
+          <li>24시 편의점 앞 골목으로 쭉 — 문은 무쇠로 된 거 하나</li>
+        </ul>
+        <p style="margin-top:1rem; border-left:4px solid #ff4d4d; padding-left:1rem;">
+          <strong>“가양 클럽 추천”</strong> 이라고 구글에 쳐봐. 1페이지는 전부 우리 얘기야. 
+          안 믿기면 직접 와서 확인해라.
+        </p>
+      </div>
+      <div class="info-card brutal-border-accent">
+        <h3>🎧 사운드 & 분위기</h3>
+        <ul>
+          <li>메인 스피커: <strong>Void Acoustics</strong> — 공기 자체를 때려부숨</li>
+          <li>장르: 인더스트리얼, 하드테크노, 브레이크코어, 풋워크</li>
+          <li>조명: 스트로브 + 레드 헤이즈 — 눈물 나도 참아</li>
+          <li>인원: 200명 딱 적당히 미어터짐</li>
+          <li>입장료: 2만원 (브로 미만 잡음) / 전화 예약시 <strong>1만원</strong></li>
+        </ul>
+        <p style="margin-top:0.8rem; background:#2a0f0f; padding:0.8rem; border:2px solid #ff4d4d;">
+          💀 <strong>규칙:</strong> 약한 놈, 찍찍대는 놈, 거울 셀카만 찍는 놈 — 입장 불가. 
+          여기는 <strong>진짜 bro</strong>를 위한 클럽이다.
+        </p>
+      </div>
+    </div>
+
+    <!-- 추가 정보 카드: 상세 정보 -->
+    <div class="brutal-border" style="margin-top:1.5rem;">
+      <h2>🔞 연령/드레스코드</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between;">
+        <div style="flex:1;">
+          <p><strong>입장 가능:</strong> 20세 이상 (신분증 필수, 미소지시 무조건 퇴출)</p>
+          <p><strong>드레스코드:</strong> 검은색 계열 강력 권장. 흰 셔츠? 집에 가라. 
+          운동화? 괜찮은데 더러운 게 좋아. <em>“거친 콘크리트”</em> 컨셉.</p>
+        </div>
+        <div style="flex:1; border-left:3px solid #ff4d4d; padding-left:1.5rem;">
+          <p><strong>운영시간:</strong> 금/토 22:00 ~ 06:00 (일요일 브레이크)</p>
+          <p><strong>특이사항:</strong> 매월 마지막주 목요일 <strong>“BRO NIGHT”</strong> — 게스트 DJ, 
+          무제한 안주 (소금에 절인 고기 + 소주 1+1)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 영역 (정보 페이지 목적) -->
+    <h2>❓ bro들이 묻는다</h2>
+    <div class="brutal-border-accent">
+      <div class="faq-item">
+        <strong>Q: 가양 클럽 추천? 여기 괜찮냐?</strong>
+        <p>가양에서 제대로 된 클럽은 딱 하나, RAW CONCRETE. 다른 곳은 노래방이나 가라. 
+        우리는 사운드로 승부본다. <strong>직접 와서 고막 터져봐.</strong></p>
+      </div>
+      <div class="faq-item">
+        <strong>Q: bro가 뭔데? 나는 bro 아냐?</strong>
+        <p>bro는 태도다. 비싼 옷 입었다고 bro? 아니다. 
+        거친 음악에 미친 듯이 머리 흔들고,
+</body>
+</html>
